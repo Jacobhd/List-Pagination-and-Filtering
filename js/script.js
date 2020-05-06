@@ -38,7 +38,7 @@ const pageItems();
        "invoke" the function
 ***/
 
-function showPage() {}
+function showPage(list, page) {}
 
 
 /***
@@ -46,7 +46,7 @@ function showPage() {}
    functionality to the pagination buttons.
 ***/
 
-function appendPageLinks() {}
+function appendPageLinks(e) {}
 
 
 /* pseudocode:
@@ -63,7 +63,7 @@ function hide all li except current 10
 endFunction
 
 function creates and appends functioning pagination appendPageLinks
-  single list parameter (i) represents all items
+  single list parameter (e) represents all items
     create and append DOM elements for pagination appendPageLinks
 endFunction
 
