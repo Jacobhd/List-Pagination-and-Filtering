@@ -65,7 +65,6 @@ endFunction
 function creates and appends functioning pagination appendPageLinks
   single list parameter (i) represents all items
     create and append DOM elements for pagination appendPageLinks
-
 endFunction
 
 call showPage function(global variable for list Items, 1)
