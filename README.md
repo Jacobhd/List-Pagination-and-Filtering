@@ -4,8 +4,6 @@ List Pagination and Filtering
 
 Tasks:
 
-Import starter files
-
 Creating a showPage function to hide all students and show only a particular set of ten.
 
 Creating appendPageLinks function to create all the pagination buttons, adds them to the DOM and adds their functionality.
