@@ -17,12 +17,13 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-// Create studentList global variable
-const studentList();
+// Create studentList global variable - list all students
+const studentList = document.querySelector(".student-list");
+console.log(studentList);
 
 // Create 2nd global variable, storing number of items to show on each page (10)
-const pageItems();
-
+const pageItems = studentList.children;
+console.log(pageItems);
 /***
    Create the `showPage` function to hide all of the items in the
    list except for the ten you want to show.
@@ -37,17 +38,22 @@ const pageItems();
        that will be passed into the parens later when you call or
        "invoke" the function
 ***/
+/*
+const showPage(list, page) => {
+  list = studentList;
+  for (let i = 0; i < list.length; i++)
 
-function showPage(list, page) {}
-
-
+};
 /***
    Create the `appendPageLinks function` to generate, append, and add
    functionality to the pagination buttons.
 ***/
+/*
+const appendPageLinks(list) => {
+  list.length / page max
 
-function appendPageLinks(e) {}
-
+}
+*/
 
 /* pseudocode:
 global studentList variable
