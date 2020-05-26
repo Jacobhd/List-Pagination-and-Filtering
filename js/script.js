@@ -17,13 +17,14 @@ FSJS project 2 - List Filter and Pagination
    scoped to that function.
 ***/
 
-// Create studentList global variable - list all students
+// studentList global variable selects where all students are listed
 const studentList = document.querySelector(".student-list");
-console.log(studentList);
+// note studentList is a class
+// console.log(studentList);
 
-// Create 2nd global variable, storing number of items to show on each page (10)
+// Selects all students
 const pageItems = studentList.children;
-console.log(pageItems);
+// console.log(pageItems);
 /***
    Create the `showPage` function to hide all of the items in the
    list except for the ten you want to show.
@@ -38,20 +39,41 @@ console.log(pageItems);
        that will be passed into the parens later when you call or
        "invoke" the function
 ***/
-/*
-const showPage(list, page) => {
+// storing number of items to show on each page (10), hides the rest
+
+const showPage = (list, page) => {
   list = studentList;
   for (let i = 0; i < list.length; i++)
-
-};
+    if (i > 10){
+      li[i].style.display = "none"
+    } else {
+      li[i].style.display = "block"
+    }
+}
+/*
+loop over items in the list parameter
+  if index of list item is >= index of first item that should be shown on page
+  && the list item index is <= the index of the last item that
+  should be shown on the page, show it
+*/
 /***
    Create the `appendPageLinks function` to generate, append, and add
    functionality to the pagination buttons.
 ***/
 /*
-const appendPageLinks(list) => {
-  list.length / page max
-
+const appendPageLinks = (list) => {
+  list = studentList;
+  list.length
+  document.addEventListener
+1  list.length / page max
+2  create div, gove pagination class and append it to the .page div
+3  Add a ul to pagination div to store pagination appendPageLinks
+   for every page, add li and a tags with page number text
+4  Add an event listener to each a tag. When clicked call showPage function
+   to display appropriate page
+5  Loop over pagination links to remove active class from all links
+6  Add the active class to the link that was just clicked.
+7  Identify that clicked link using event.target
 }
 */
 
