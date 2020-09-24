@@ -1,0 +1,21 @@
+/* pseudocode:
+global studentList variable
+global listPageItem variable
+
+function hide all li except current 10
+  list parameter
+  page parameter
+    startIndex = (page parameter * items per page)
+    endIndex = page parameter * items per page
+    Loop over list parameter
+      inside loop, display any li with index >= startIndex and < end index variables
+endFunction
+
+function creates and appends functioning pagination appendPageLinks
+  single list parameter (e) represents all items
+    create and append DOM elements for pagination appendPageLinks
+endFunction
+
+call showPage function(global variable for list Items, 1)
+call append page links function(global variable for list Items)
+*/
