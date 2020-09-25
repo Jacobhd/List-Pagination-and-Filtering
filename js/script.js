@@ -62,7 +62,9 @@ loop over items in the list parameter
 const appendPageLinks = (list) => {
   list = studentList;
   list.length
-  document.addEventListener('click', )
+  document.addEventListener('click', (e) => {
+
+}
 
 
 1  list.length / page max
@@ -77,7 +79,8 @@ const appendPageLinks = (list) => {
 }
 */
 
-
+showPage(studentList, 1);
+appendPageLinks(studentList);
 
 /* pseudocode:
 global studentList variable
