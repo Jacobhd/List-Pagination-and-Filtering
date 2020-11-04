@@ -5,61 +5,45 @@ FSJS project 2 - List Filter and Pagination
 
 
 // Global variables
-const studentList = document.querySelectorAll(".student-item"); //selects node of 'li' elements containing'students
-console.log(studentList); // test
-
+const studentList = document.querySelectorAll(".student-item"); // Selects node of 'li' elements containing list of students
 const pageItems = 10; // Number of students to show on each page
 
 
-//showPage function to show and hide students
-const showPage = (list, page) => { //list, page parameters to be passed in
-  let startIndex = ( page * pageItems ) - pageItems; //first item to show
-  let endIndex = page * pageItems; //last item
-  for (let i = 0; i < list.length; i++) {
-    if (i >= startIndex && i < endIndex) {
-      list[i].style.display = 'block'; //show block of 'li' 10 at a time
+const showPage = (list, page) => { // 'showPage' function to show and hide students
+  let startIndex = ( page * pageItems ) - pageItems; // First index item to show
+  let endIndex = page * pageItems; // Last index item to show
+  for (let i = 0; i < list.length; i++) { // Loop through and index student items
+    if (i >= startIndex && i < endIndex) { // If list index is greater or equal fisrt items and list index is less than last item
+      list[i].style.display = 'block'; // Display block of list index items 10 at a time
     } else {
-      list[i].style.display = 'none'; //hides the rest
-    }
-  }
-}
+      list[i].style.display = 'none'; // Hides all other list index items
+    } // if...else statement
+  } // for loop
+} // showPage arrow function with two parameters to be passed in
 
 
-//appendPageLinks function
-const appendPageLinks = (list) => {
-  let totalPages = Math.ceil(list.length / pageItems); //divides total list items by max items on page
-  const page = document.querySelector('.page'); //selects '.page' class
-  const ul = document.createElement('ul'); //creates 'ul' element
-  const div = document.createElement('div'); //creates 'div' element
-  div.className = 'pagination'; //gives 'div' class of pagination
-  div.appendChild(ul); //adds 'ul' to 'div' to store pagination links
-  page.appendChild(div); //appends 'div' to 'page' div
+const appendPageLinks = (list) => { // Display sets of items unique to each page and determine how many pages to display
+  let totalPages = Math.ceil(list.length / pageItems); // Divides total list items by max items on page, determining how many pages to display
+  const page = document.querySelector('.page'); // Selects '.page' class
+  const ul = document.createElement('ul'); // Creates 'ul' element
+  const div = document.createElement('div'); // Creates 'div' element
+  div.className = 'pagination'; // Gives 'div' class of pagination
+  div.appendChild(ul); // Adds 'ul' to div to store pagination links
+  page.appendChild(div); // Appends 'div' to 'page' div
+  for (let i = 1; i < totalPages; i++ ) { // For every page, add 'li' and 'a' tags with the page number text
+    const li = document.createElement('li'); // Creates 'li' element
+    const a = document.createElement('a'); // Creates 'anchor' element
+    li.appendChild(a); // Appends 'a' to 'li'
+    ul.appendChild(li); // Appends 'li' to 'ul'
+    a.className = 'active'; // 'a' link active
+    a.href = '#'; // Sets link address
+    a.textContent = i; // 'a' links functionality to loop through index
+    a.addEventListener('click', () => { // Click eventListener to call with each link clicked, looping through the list
+      showPage(studentList, i); // Calls 'showPage' function, passing in students and 'i' to be looped over displaying sets of students
+    }); // 'Click' eventListener on anchor elements
+  } // for loop
+} // 'appendPageLinks' arrow function with single parameter
 
-  for (let i = 1; i < totalPages; i++ ) { //for every page, add li and a tags with the page number text
-    const li = document.createElement('li'); //creates 'li' element
-    const a = document.createElement('a'); //creates 'anchor' element
-    a.className = 'active'; //'a' link active
-    a.href = '#'; //sets link address
-    a.textContent = i; //'a' links to start at page 1
-    li.appendChild(a); //adds 'a' to 'li'
-    ul.appendChild(li); //adds 'li' to 'ul'
 
-    a.addEventListener('click', () => {
-      for (let i = 0; i < totalPages; i++) {
-      if (a.target.tagName === 'a')
-      a.className.remove = '';
-      a.target.className = 'active';
-      showPage(studentList, 1); //2nd argument should be text content of 'a' element that was just clicked
-      }
-    }); //eventListener click on anchor elements
-  }
-}
-
-//nested UL element needs to contain one LI element for every 10 students in the list
-//the active class name should be added to the link that was just clicked.
-
-showPage(studentList, 1);
-//not hiding groups of students
-
-appendPageLinks(studentList);
-//shows button, clickable, doen't have functionality
+showPage(studentList, 1); // Call 'showPage' function passing in list of students and how many to show per page
+appendPageLinks(studentList); // Call 'appendPageLinks' function passing in list of students to determine number of pages to display
