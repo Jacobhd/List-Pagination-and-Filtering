@@ -30,7 +30,7 @@ const appendPageLinks = (list) => { // Display sets of items unique to each page
   div.className = 'pagination'; // Gives 'div' class of pagination
   div.appendChild(ul); // Adds 'ul' to div to store pagination links
   page.appendChild(div); // Appends 'div' to 'page' div
-  for (let i = 1; i < totalPages; i++ ) { // For every page, add 'li' and 'a' tags with the page number text
+  for (let i = 1; i <= totalPages; i++ ) { // For every page, add 'li' and 'a' tags with the page number text
     const li = document.createElement('li'); // Creates 'li' element
     const a = document.createElement('a'); // Creates 'anchor' element
     li.appendChild(a); // Appends 'a' to 'li'
