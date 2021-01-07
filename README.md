@@ -1,5 +1,5 @@
 # List Pagination and Filtering
-# techdegree-project-2
+# Techdegree Project 2
 
 
 Creating a library of students accessed through pagination
