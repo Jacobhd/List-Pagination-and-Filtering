@@ -1,6 +1,7 @@
 # techdegree-project-2
-List Pagination and Filtering
- Creating a library of students accessed through pagination
+# List Pagination and Filtering
+
+Creating a library of students accessed through pagination
 
 Tasks:
 
