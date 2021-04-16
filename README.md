@@ -1,5 +1,4 @@
 # List Pagination and Filtering
-# Techdegree Project 2
 
 Better displays a long list of student information, dividing long list into a series of pages and improve the user experience of a web page
 
